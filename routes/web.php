@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::get('/courses', [DashboardController::class, 'kursuses'])->name('dashboar
 Route::get('/users', [DashboardController::class, 'users'])->name('dashboard.users');
 Route::get('/payments', [DashboardController::class, 'payments'])->name('dashboard.payments');
 Route::get('/reviews', [DashboardController::class, 'reviews'])->name('dashboard.reviews');
+Route::resource('admin/users', UserController::class);
