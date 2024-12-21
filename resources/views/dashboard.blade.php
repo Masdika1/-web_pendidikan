@@ -167,12 +167,7 @@
             </div>
             <div class="p-4 text-right">
               <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Keuntungan</p>
-              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">$53k</h4>
-            </div>
-            <div class="border-t border-blue-gray-50 p-4">
-              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                <strong class="text-green-500">+55%</strong>&nbsp;than last week
-              </p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ number_format($totalRevenue, 2) }}</h4>
             </div>
           </div>
           <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
@@ -182,13 +177,8 @@
               </svg>
             </div>
             <div class="p-4 text-right">
-              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Today's Users</p>
-              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">2,300</h4>
-            </div>
-            <div class="border-t border-blue-gray-50 p-4">
-              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                <strong class="text-green-500">+3%</strong>&nbsp;than last month
-              </p>
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Total Pengguna</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ $totalUsers }}</h4>
             </div>
           </div>
           <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
@@ -198,13 +188,8 @@
               </svg>
             </div>
             <div class="p-4 text-right">
-              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">New Clients</p>
-              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">3,462</h4>
-            </div>
-            <div class="border-t border-blue-gray-50 p-4">
-              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                <strong class="text-red-500">-2%</strong>&nbsp;than yesterday
-              </p>
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Total Pendaftar</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ $totalEnrollments }}</h4>
             </div>
           </div>
           <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
@@ -214,14 +199,10 @@
               </svg>
             </div>
             <div class="p-4 text-right">
-              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Sales</p>
-              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">$103,430</h4>
+              <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Total Kursus</p>
+              <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ $totalCourses }}</h4>
             </div>
-            <div class="border-t border-blue-gray-50 p-4">
-              <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                <strong class="text-green-500">+5%</strong>&nbsp;than yesterday
-              </p>
-            </div>
+
           </div>
         </div>
 

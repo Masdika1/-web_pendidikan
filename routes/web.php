@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/courses', [DashboardController::class, 'kursuses'])->name('dashboard.courses');
+Route::get('/users', [DashboardController::class, 'users'])->name('dashboard.users');
+Route::get('/payments', [DashboardController::class, 'payments'])->name('dashboard.payments');
+Route::get('/reviews', [DashboardController::class, 'reviews'])->name('dashboard.reviews');
