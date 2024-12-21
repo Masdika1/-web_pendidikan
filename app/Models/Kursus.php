@@ -8,4 +8,36 @@ use Illuminate\Database\Eloquent\Model;
 class Kursus extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'instructor_id',
+        'title',
+        'description',
+        'category',
+        'price',
+    ];
+
+    // Relasi ke User
+    public function instructor()
+    {
+        return $this->belongsTo(User::class, 'instructor_id');
+    }
+
+    // Relasi ke Module
+    public function modules()
+    {
+        return $this->hasMany(Modul::class);
+    }
+
+    // Relasi ke Enrollment
+    public function enrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
+
+    // Relasi ke Review
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
