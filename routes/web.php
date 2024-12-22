@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KursusController;
+use App\Http\Controllers\ModulController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,4 @@ Route::get('/payments', [DashboardController::class, 'payments'])->name('dashboa
 Route::get('/reviews', [DashboardController::class, 'reviews'])->name('dashboard.reviews');
 Route::resource('admin/users', UserController::class);
 Route::resource('admin/kursuses', KursusController::class);
+Route::resource('admin/moduls', ModulController::class);
