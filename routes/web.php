@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\KursusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,4 @@ Route::get('/users', [DashboardController::class, 'users'])->name('dashboard.use
 Route::get('/payments', [DashboardController::class, 'payments'])->name('dashboard.payments');
 Route::get('/reviews', [DashboardController::class, 'reviews'])->name('dashboard.reviews');
 Route::resource('admin/users', UserController::class);
+Route::resource('admin/kursuses', KursusController::class);

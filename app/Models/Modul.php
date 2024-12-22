@@ -17,7 +17,7 @@ class Modul extends Model
     ];
 
     // Relasi ke Course
-    public function course()
+    public function kursuses()
     {
         return $this->belongsTo(Kursus::class);
     }
