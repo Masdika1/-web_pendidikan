@@ -35,4 +35,6 @@ Route::get('/payments', [DashboardController::class, 'payments'])->name('dashboa
 Route::get('/reviews', [DashboardController::class, 'reviews'])->name('dashboard.reviews');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login_view');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register_view');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 

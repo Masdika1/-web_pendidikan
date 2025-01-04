@@ -16,15 +16,14 @@
         <div class="bg-blue-600 text-white flex flex-col items-center justify-center p-6 md:w-1/2">
             <img src="https://i.pinimg.com/736x/3c/e6/ca/3ce6ca39ed39d4e677777831a34bd365.jpg" alt="Medic Icon" class="w-60 rounded-full mb-4">
             <h2 class="text-2xl font-bold font-mono">SKILLIFY</h2>
-            <p class="text-center text-sm mt-2 font-mono">
+            <p class="font-mono text-center mt-4 text-lg">
                 Belajar Lebih Mudah, Ciptakan Masa Depan Cerah!
             </p>
         </div>
 
         <!-- Right Box -->
         <div class="p-8 flex-1">
-            <h2 class="text-2xl font-semibold">Hell-O</h2>
-            <p class="text-gray-600 mt-2 mb-6">Ayo masuk untuk mulai menjelajah berbagai kursus yang kami tawarkan!</p>
+            <h2 class="text-2xl border-b py-5 font-semibold">Login</h2>
             @if(session('error'))
                 <div class="alert alert-error bg-green-500 text-white p-4 rounded-lg shadow-md flex items-center space-x-4 my-10" role="alert">
                     <span>{{ session('error') }}</span>
@@ -33,7 +32,7 @@
             <form method="POST" action="{{route('login')}}" class="space-y-4">
                 @csrf
                 <div>
-                    <input type="email" name="email" placeholder="email"
+                    <input type="email" name="email" placeholder="Email"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring focus:ring-blue-500 focus:outline-none"
                         required>
                         @error('email')
@@ -41,25 +40,27 @@
                         @enderror
                 </div>
                 <div class="relative">
-                    <input type="password" id="password" name="password" placeholder="Password"
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Password"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:ring focus:ring-blue-500 focus:outline-none"
                         required>
                         @error('password')
                             <span class="text-red-500">{{ $message }}</span>
                        @enderror
-                    <span class="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer" onclick="togglePasswordVisibility()">
-                        <svg id="eye-icon" class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6z" />
-                        </svg>
-                    </span>
+                        <span class="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer" onclick="togglePasswordVisibility()">
+                            <svg id="eye-icon" class="w-6 h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6z" />
+                            </svg>
+                        </span>
+                    </div>
                 </div>
                 <button type="submit"
                     class="w-full bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded-lg transition duration-200">
                     Login
                 </button>
                 <div class="text-sm text-center">
-                    Belum punya akun? <a href="register.php" class="text-blue-500 hover:underline">Daftar</a>
+                    Belum punya akun? <a href="{{route('register_view')}}" class="text-blue-500 hover:underline">Daftar</a>
                 </div>
             </form>
         </div>
