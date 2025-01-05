@@ -8,6 +8,7 @@ use App\Http\Controllers\ModulController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,7 @@ Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
     Route::get('/student/dashboard', function () {
         return view('student.dashboard');
     });
+    Route::resource('/student/reviews', ReviewController::class);
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');

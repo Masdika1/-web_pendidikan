@@ -18,14 +18,16 @@ class Review extends Model
     ];
 
     // Relasi ke Course
-    public function kursuses()
+    public function kursus()
     {
-        return $this->belongsTo(Kursus::class);
+        return $this->belongsTo(Kursus::class, 'kursus_id');
     }
 
-    // Relasi ke User
+    /**
+     * Relasi ke model User
+     */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
