@@ -28,6 +28,12 @@ Route::middleware([RoleMiddleware::class . ':admin'])->group(function (){
     Route::resource('admin/moduls', ModulController::class);
 });
 
+Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
+    Route::get('/student/dashboard', function () {
+        return view('student.dashboard');
+    });
+});
+
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/courses', [DashboardController::class, 'kursuses'])->name('dashboard.courses');
 Route::get('/users', [DashboardController::class, 'users'])->name('dashboard.users');

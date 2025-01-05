@@ -28,7 +28,7 @@ class AuthController extends Controller
             if ($role === 'admin') {
                 return redirect('/admin/users')->with('success', 'Login berhasil.');
             } elseif ($role === 'student') {
-                return redirect('/');
+                return redirect('/student/dashboard')->with('success', 'Login berhasil.');
             } elseif ($role === 'instructor') {
                 return redirect('/');
             }
