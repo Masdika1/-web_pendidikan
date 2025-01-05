@@ -17,15 +17,17 @@ class Enrollment extends Model
     ];
 
     // Relasi ke User
-    public function user()
+    public function kursus()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Kursus::class, 'kursus_id');
     }
 
-    // Relasi ke Course
-    public function kursuses()
+    /**
+     * Relasi ke model User
+     */
+    public function user()
     {
-        return $this->belongsTo(Kursus::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     // Relasi ke Certificate

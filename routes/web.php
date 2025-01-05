@@ -7,6 +7,7 @@ use App\Http\Controllers\KursusController;
 use App\Http\Controllers\ModulController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\RoleMiddleware;
+use App\Http\Controllers\CertificateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::middleware([RoleMiddleware::class . ':admin'])->group(function (){
     Route::resource('admin/users', UserController::class);
     Route::resource('admin/kursuses', KursusController::class);
     Route::resource('admin/moduls', ModulController::class);
+    Route::resource('admin/certificates', CertificateController::class);
 });
 
 Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
