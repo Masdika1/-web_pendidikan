@@ -11,7 +11,7 @@ class Payment extends Model
 
     protected $fillable = [
         'user_id',
-        'course_id',
+        'kursus_id',
         'amount',
         'payment_date',
         'payment_status',
@@ -24,7 +24,7 @@ class Payment extends Model
     }
 
     // Relasi ke Course
-    public function kursuses()
+    public function kursus()
     {
         return $this->belongsTo(Kursus::class);
     }
