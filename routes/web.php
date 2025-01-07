@@ -10,6 +10,9 @@ use App\Http\Middleware\RoleMiddleware;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StudentPaymentController;
+use App\Http\Controllers\StudentKursusController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,13 +34,22 @@ Route::middleware([RoleMiddleware::class . ':admin'])->group(function (){
     Route::resource('admin/moduls', ModulController::class);
     Route::resource('admin/certificates', CertificateController::class);
     Route::resource('/admin/lessons', LessonController::class);
+    Route::resource('/admin/payments', PaymentController::class);
 });
 
 Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
     Route::get('/student/dashboard', function () {
         return view('student.dashboard');
-    });
+    })->name('student.dashboard');
     Route::resource('/student/reviews', ReviewController::class);
+    Route::get('payments/student', [StudentPaymentController::class, 'index'])->name('student.payments.studentPayments');
+    Route::get('payments/student/create', [StudentPaymentController::class, 'create'])->name('student.payments.create');
+    Route::post('payments/student', [StudentPaymentController::class, 'store'])->name('student.payments.store');
+        // Menampilkan daftar kursus
+    Route::get('student/kursuses', [StudentKursusController::class, 'index'])->name('student.kursuses.index');
+
+    // Menampilkan detail kursus
+    Route::get('student/kursuses/{kursus}', [StudentKursusController::class, 'show'])->name('student.kursuses.show');
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');

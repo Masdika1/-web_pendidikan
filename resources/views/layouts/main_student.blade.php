@@ -47,9 +47,9 @@
         <div class="m-4">
           <ul class="mb-4 flex flex-col gap-1">
             <li>
-              <a aria-current="page" class="" href="/student/dashboard">
+              <a aria-current="page" class="" href="{{route ('student.dashboard')}}">
                 <button
-                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] w-full flex items-center gap-4 px-4 capitalize"
+                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.dashboard' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
                   <svg
@@ -69,7 +69,7 @@
                   <p
                     class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                   >
-                    dashboard
+                    Dashboard
                   </p>
                 </button>
               </a>
@@ -102,9 +102,9 @@
               </a>
             </li>
             <li>
-              <a class="" href="">
+              <a class="" href="{{route('student.kursuses.index')}}">
                 <button
-                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.kursuses.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
                   <svg
@@ -185,7 +185,7 @@
               <li>
                 <a class="" href="{{route('reviews.index')}}">
                   <button
-                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'reviews.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -205,6 +205,39 @@
                       class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                     >
                       Reviews
+                    </p>
+                  </button>
+                </a>
+              </li>
+              <li>
+                <a class="" href="{{route('student.payments.studentPayments')}}">
+                  <button
+                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.payments.studentPayments' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                    type="button"
+                  >
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="w-6 h-6 text-white"
+                >
+                  <path
+                    d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path
+                    d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z"
+                  ></path>
+                </svg>
+                    <p
+                      class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
+                    >
+                      Pembayaran
                     </p>
                   </button>
                 </a>
