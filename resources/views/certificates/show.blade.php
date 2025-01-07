@@ -11,8 +11,10 @@
         <p><strong>Issue Date:</strong> {{ $certificate->issue_date }}</p>
     </div>
 
-    <a href="{{ route('certificates.index') }}" class="mt-4 inline-block text-blue-500 hover:underline">
-        Back to List
-    </a>
+    <div class="mt-6 flex justify-between">
+        <a href="{{ route('certificates.index') }}" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-500 transition duration-300">
+            Back to List
+        </a>
+    </div>
 </div>
 @endsection
