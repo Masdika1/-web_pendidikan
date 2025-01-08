@@ -13,6 +13,7 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentPaymentController;
 use App\Http\Controllers\StudentKursusController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +51,15 @@ Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
 
     // Menampilkan detail kursus
     Route::get('student/kursuses/{kursus}', [StudentKursusController::class, 'show'])->name('student.kursuses.show');
+
+    // Menampilkan profil pengguna
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+
+    // Menampilkan form edit profil
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
+    // Mengupdate profil pengguna
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');

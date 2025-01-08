@@ -3,69 +3,59 @@
 @section('content')
 
 <div class="container mx-auto p-6">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <h1 class="text-2xl font-bold text-gray-800">{{ $kursus->title }}</h1>
-        <p class="text-sm text-gray-600 mt-2">Kategori: <span class="font-medium">{{ $kursus->category }}</span></p>
-        <p class="text-sm text-gray-600 mt-1">Harga: <span class="font-medium">Rp {{ number_format($kursus->price, 0, ',', '.') }}</span></p>
-        <p class="mt-4 text-gray-700">{{ $kursus->description }}</p>
+    <!-- Back Button -->
+    <div class="mb-6">
+        <a href="{{ route('kursuses.index') }}" class="inline-block text-blue-600 hover:text-blue-800 font-medium text-sm">
+            <i class="fas fa-arrow-left mr-2"></i> Kembali ke Kursus
+        </a>
     </div>
-    <div class="mt-8">
-        <h2 class="text-xl font-semibold text-gray-800">Modul Kursus</h2>
+
+    <!-- Kursus Information -->
+    <div class="bg-white shadow-xl rounded-lg p-8 mb-6">
+        <h1 class="text-3xl font-extrabold text-gray-800">{{ $kursus->title }}</h1>
+        <p class="text-sm text-gray-600 mt-2">Kategori: <span class="font-medium text-blue-600">{{ $kursus->category }}</span></p>
+        <p class="text-sm text-gray-600 mt-1">Harga: <span class="font-medium text-green-600">Rp {{ number_format($kursus->price, 0, ',', '.') }}</span></p>
+        <p class="mt-4 text-gray-700 text-lg">{{ $kursus->description }}</p>
+    </div>
+
+    <!-- Modul Kursus -->
+    <div class="mt-8 bg-white shadow-xl rounded-lg p-8">
+        <h2 class="text-2xl font-semibold text-gray-800">Modul Kursus</h2>
         @if ($modules && count($modules) > 0)
-            <ul class="mt-4 space-y-3">
+            <ul class="mt-6 space-y-4">
                 @foreach ($modules as $module)
-                    <li class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                        <h3 class="text-gray-800 font-medium">{{ $module->title }}</h3>
-                        <p class="text-gray-600 text-sm">{{ $module->description }}</p>
+                    <li class="bg-gray-50 p-5 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                        <h3 class="text-gray-800 text-lg font-semibold">{{ $module->title }}</h3>
+                        <p class="text-gray-600 text-sm mt-2">{{ $module->description }}</p>
                     </li>
                 @endforeach
             </ul>
         @else
-            <p class="text-gray-600">Tidak ada modul yang tersedia untuk kursus ini.</p>
+            <p class="text-gray-600 mt-4">Tidak ada modul yang tersedia untuk kursus ini.</p>
         @endif
     </div>
 
-    <div class="mt-8">
-        <h2 class="text-xl font-semibold text-gray-800">Review</h2>
+    <!-- Reviews Section -->
+    <div class="mt-8 bg-white shadow-xl rounded-lg p-8">
+        <h2 class="text-2xl font-semibold text-gray-800">Review</h2>
         @foreach ($reviews as $review)
-            <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <div class="mt-6 p-5 bg-gray-50 rounded-lg border border-gray-200">
                 <p class="text-sm text-gray-700"><strong>{{ $review->user->name }}</strong> (Rating: {{ $review->rating }})</p>
-                <p class="text-gray-600">{{ $review->comment }}</p>
+                <p class="text-gray-600 mt-2">{{ $review->comment }}</p>
             </div>
         @endforeach
+    </div>
 
-        @auth
-            <div class="mt-6">
-                <h3 class="text-lg font-semibold text-gray-800">Tambah Review</h3>
-                <form action="{{ route('kursuses.review', $kursus->id) }}" method="POST" class="mt-4">
-                    @csrf
-                    <div class="mb-4">
-                        <label for="rating" class="block text-sm font-medium text-gray-700">Rating</label>
-                        <select id="rating" name="rating" class="block w-full mt-1 p-2 border-gray-300 rounded-lg">
-                            <option value="1">1 - Buruk</option>
-                            <option value="2">2 - Cukup</option>
-                            <option value="3">3 - Baik</option>
-                            <option value="4">4 - Sangat Baik</option>
-                            <option value="5">5 - Luar Biasa</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="comment" class="block text-sm font-medium text-gray-700">Komentar</label>
-                        <textarea id="comment" name="comment" rows="4" class="block w-full mt-1 p-2 border-gray-300 rounded-lg"></textarea>
-                    </div>
-                    <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-                        Kirim Review
-                    </button>
-                </form>
-            </div>
-        @endauth
-        <form class='mt-5' action="{{ route('kursuses.destroy', $kursus->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus kursus ini?')">
+    <!-- Delete Kursus Button -->
+    <div class="mt-8 text-center">
+        <form class='inline-block' action="{{ route('kursuses.destroy', $kursus->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus kursus ini?')">
             @csrf
             @method('DELETE')
-            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 my-5">
-                Hapus
+            <button type="submit" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition duration-300">
+                Hapus Kursus
             </button>
         </form>
     </div>
 </div>
+
 @endsection

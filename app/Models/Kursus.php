@@ -15,6 +15,7 @@ class Kursus extends Model
         'description',
         'category',
         'price',
+        'picture',
     ];
 
     // Relasi ke User
