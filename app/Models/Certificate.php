@@ -14,7 +14,9 @@ class Certificate extends Model
         'issue_date',
         'certificate_code',
     ];
-
+    protected $casts = [
+        'issue_date' => 'datetime',
+    ];
     // Relasi ke Enrollment
     public function enrollment()
     {

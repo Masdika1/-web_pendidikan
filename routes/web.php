@@ -15,6 +15,8 @@ use App\Http\Controllers\StudentPaymentController;
 use App\Http\Controllers\StudentKursusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentModulController;
+use App\Http\Controllers\StudentCertificateController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +55,9 @@ Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
     // Menampilkan detail kursus
     Route::get('student/kursuses/{kursus}', [StudentKursusController::class, 'show'])->name('student.kursuses.show');
 
+    Route::get('student/certificates', [StudentCertificateController::class, 'index'])->name('student.sertifikat.index');
+    Route::get('student/certificates/{id}', [StudentCertificateController::class, 'show'])->name('student.sertifikat.show');
+
     // Menampilkan profil pengguna
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 
@@ -76,3 +81,4 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register_view');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
