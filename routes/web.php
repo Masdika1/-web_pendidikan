@@ -14,6 +14,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StudentPaymentController;
 use App\Http\Controllers\StudentKursusController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentModulController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,6 +61,9 @@ Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
 
     // Mengupdate profil pengguna
     Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('student/moduls', [StudentModulController::class, 'index'])->name('student.moduls.index');
+    Route::get('student/moduls/{id}', [StudentModulController::class, 'show'])->name('student.moduls.show');
+
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
