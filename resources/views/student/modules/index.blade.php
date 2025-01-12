@@ -28,7 +28,7 @@
                         Order: {{ $modul->order_no }}
                     </span>
                     <a href="{{ route('student.moduls.show', $modul->id) }}"
-                       class="inline-block bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-lg shadow hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2"
+                       class="inline-block bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded-lg shadow focus:ring-2 focus:ring-blue-300 focus:ring-offset-2"
                        rel="noopener noreferrer"
                        aria-label="View details for {{ $modul->title }}">
                         View Details

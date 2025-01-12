@@ -54,11 +54,11 @@
         <!-- Submit and Cancel Buttons -->
         <div class="flex justify-between items-center mt-6">
             <button type="submit"
-                    class="px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-medium rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">
+                    class="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white text-lg font-medium rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">
                 Update Review
             </button>
             <a href="{{ route('reviews.index') }}"
-               class="px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-medium rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">
+               class="px-8 py-3 bg-gray-500 hover:bg-gray-600 text-white text-lg font-medium rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">
                 Cancel
             </a>
         </div>

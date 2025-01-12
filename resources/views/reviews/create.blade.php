@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-3xl mx-auto py-10">
     <div class="bg-white shadow-lg rounded-xl p-8">
-        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Tambah Review</h2>
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Buat Review</h2>
 
         <!-- Error Alerts -->
         @if ($errors->any())
@@ -62,14 +62,14 @@
             <!-- Submit and Cancel Buttons -->
             <div class="flex justify-between items-center">
                 <button type="submit"
-                        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-lg font-medium rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">
+                        class="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white text-lg font-medium rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                     Submit
                 </button>
                 <a href="{{ route('reviews.index') }}"
-                   class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-lg font-medium rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">Cancel</a>
+                   class="inline-flex items-center px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white text-lg font-medium rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-200 ease-in-out">Cancel</a>
             </div>
         </form>
     </div>
