@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
   </head>
   <body>
     <!-- component -->
@@ -47,9 +53,9 @@
         <div class="m-4">
           <ul class="mb-4 flex flex-col gap-1">
             <li>
-              <a aria-current="page" class="{{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}" href="{{route('dashboard.index')}}">
+              <a aria-current="page" class="" href="{{route ('student.dashboard')}}">
                 <button
-                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'dashboard.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.dashboard' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
                   <svg
@@ -69,15 +75,15 @@
                   <p
                     class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                   >
-                    dashboard
+                    Dashboard
                   </p>
                 </button>
               </a>
             </li>
             <li>
-              <a class="{{ Route::currentRouteName() == 'users.index' ? 'active' : '' }}" href="{{route('users.index')}}">
+              <a class="" href="/profile">
                 <button
-                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'users.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'profile.show' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
                   <svg
@@ -96,15 +102,15 @@
                   <p
                     class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                   >
-                    Pengguna
+                    Profile
                   </p>
                 </button>
               </a>
             </li>
             <li>
-              <a class="" href="{{route('kursuses.index')}}">
+              <a class="" href="{{route('student.kursuses.index')}}">
                 <button
-                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'kursuses.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.kursuses.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
                   <svg
@@ -129,36 +135,9 @@
               </a>
             </li>
             <li>
-                <a class="" href="{{route('enrollments.index')}}">
-                  <button
-                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'enrollments.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
-                    type="button"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5 text-inherit"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M1.5 5.625c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v12.75c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 18.375V5.625zM21 9.375A.375.375 0 0020.625 9h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 00.375-.375v-1.5zm0 3.75a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 00.375-.375v-1.5zm0 3.75a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5a.375.375 0 00.375-.375v-1.5zM10.875 18.75a.375.375 0 00.375-.375v-1.5a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375h7.5zM3.375 15h7.5a.375.375 0 00.375-.375v-1.5a.375.375 0 00-.375-.375h-7.5a.375.375 0 00-.375.375v1.5c0 .207.168.375.375.375zm0-3.75h7.5a.375.375 0 00.375-.375v-1.5A.375.375 0 0010.875 9h-7.5A.375.375 0 003 9.375v1.5c0 .207.168.375.375.375z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <p
-                      class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
-                    >
-                      Enrollment
-                    </p>
-                  </button>
-                </a>
-              </li>
-            <li>
-              <a class="" href="{{route('moduls.index')}}">
+              <a class="" href="{{route('student.moduls.index')}}">
                 <button
-                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'moduls.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                  class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.moduls.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
                   <svg
@@ -183,9 +162,9 @@
               </a>
             </li>
             <li>
-                <a class="" href="{{route('certificates.index')}}">
+                <a class="" href="{{route('student.sertifikat.index')}}">
                   <button
-                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'certificates.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -210,9 +189,9 @@
                 </a>
               </li>
               <li>
-                <a class="" href="{{route('lessons.index')}}">
+                <a class="" href="{{route('reviews.index')}}">
                   <button
-                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'lessons.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'reviews.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                     <svg
@@ -231,15 +210,15 @@
                     <p
                       class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                     >
-                      Pelajaran
+                      Reviews
                     </p>
                   </button>
                 </a>
               </li>
               <li>
-                <a class="" href="{{route('payments.index')}}">
+                <a class="" href="{{route('student.payments.studentPayments')}}">
                   <button
-                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'payments.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
+                    class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.payments.studentPayments' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
                   <svg
@@ -331,7 +310,6 @@
                   </button>
                 </form>
               </li>
-
           </ul>
         </div>
       </aside>
@@ -350,7 +328,7 @@
                   <li
                     class="flex items-center text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-light-blue-500"
                   >
-                    <a href="{{route('dashboard.index')}}">
+                    <a href="">
                       <p
                         class="block antialiased font-sans text-sm leading-normal text-blue-900 font-normal opacity-50 transition-all hover:text-blue-500 hover:opacity-100"
                       >
@@ -373,6 +351,11 @@
                   </li>
                 </ol>
               </nav>
+              <h6
+                class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900"
+              >
+                home
+              </h6>
             </div>
             <div class="flex items-center">
               <div class="mr-auto md:mr-4 md:w-56">

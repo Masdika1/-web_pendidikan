@@ -16,6 +16,7 @@ use App\Http\Controllers\StudentKursusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentModulController;
 use App\Http\Controllers\StudentCertificateController;
+use App\Http\Controllers\EnrollmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,12 @@ Route::middleware([RoleMiddleware::class . ':admin'])->group(function (){
     Route::resource('admin/certificates', CertificateController::class);
     Route::resource('/admin/lessons', LessonController::class);
     Route::resource('/admin/payments', PaymentController::class);
+    Route::get('admin/enrollments', [EnrollmentController::class, 'index'])->name('enrollments.index');
+    Route::get('admin/enrollments/{id}', [EnrollmentController::class, 'show'])->name('enrollments.show');
+    Route::get('admin/enrollments/{id}/edit', [EnrollmentController::class, 'edit'])->name('enrollments.edit');
+    Route::put('/enrollments/{id}', [EnrollmentController::class, 'update'])->name('enrollments.update');
+    Route::delete('/enrollments/{id}', [EnrollmentController::class, 'destroy'])->name('enrollments.destroy');
+    Route::post('/enrollments', [EnrollmentController::class, 'store'])->name('enrollments.store');
 });
 
 Route::middleware([RoleMiddleware::class . ':student'])->group(function (){

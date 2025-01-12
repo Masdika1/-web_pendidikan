@@ -35,4 +35,12 @@ class Enrollment extends Model
     {
         return $this->hasOne(Certificate::class);
     }
+
+        /**
+     * Relasi ke model Course.
+     */
+    public function course()
+    {
+        return $this->belongsTo(kursus::class);
+    }
 }
