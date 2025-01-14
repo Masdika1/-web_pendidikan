@@ -88,7 +88,7 @@ Route::middleware([RoleMiddleware::class . ':instructor'])->group(function (){
     Route::post('/instructor/kursuses', [InstructorKursusController::class, 'store'])->name('instructor.kursuses.store'); // Simpan kursus baru
     Route::get('/instructor/kursuses/{id}', [InstructorKursusController::class, 'show'])->name('instructor.kursuses.show'); // Detail kursus
     Route::get('/instructor/kursuses/{id}/edit', [InstructorKursusController::class, 'edit'])->name('instructor.kursuses.edit'); // Form edit kursus
-    Route::put('kursuses/{id}', [InstructorKursusController::class, 'update'])->name('instructor.kursuses.update'); // Update kursus
+    Route::put('/instructor/kursuses/{id}/', [InstructorKursusController::class, 'update'])->name('instructor.kursuses.update'); // Update kursus
     Route::delete('kursuses/{id}', [InstructorKursusController::class, 'destroy'])->name('instructor.kursuses.destroy'); // Hapus kursus
 });
 

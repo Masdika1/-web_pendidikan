@@ -30,6 +30,52 @@ class InstructorKursusController extends Controller
         return view('instructor.kursuses.create');
     }
 
+/**
+ * Show the form for editing the specified course.
+ */
+public function edit($id)
+{
+    $kursus = Kursus::findOrFail($id);
+    return view('instructor.kursuses.edit', compact('kursus'));
+}
+
+/**
+ * Update the specified course.
+ */
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'category' => 'required|string',
+        'price' => 'required|numeric',
+        'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    $kursus = Kursus::findOrFail($id);
+
+    $picturePath = $kursus->picture;
+
+    // Update gambar jika ada file baru
+    if ($request->hasFile('picture')) {
+        if ($picturePath) {
+            // Hapus gambar lama
+            \Storage::disk('public')->delete($picturePath);
+        }
+        $picturePath = $request->file('picture')->store('kursus_pictures', 'public');
+    }
+
+    // Update kursus
+    $kursus->update([
+        'title' => $request->title,
+        'description' => $request->description,
+        'category' => $request->category,
+        'price' => $request->price,
+        'picture' => $picturePath,
+    ]);
+
+        return redirect()->route('instructor.kursuses.index')->with('success', 'Kursus berhasil diperbarui!');
+    }
     /**
      * Store a newly created course.
      */
