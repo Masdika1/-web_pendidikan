@@ -17,6 +17,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentModulController;
 use App\Http\Controllers\StudentCertificateController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\InstructorKursusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,19 @@ Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
     Route::get('student/moduls', [StudentModulController::class, 'index'])->name('student.moduls.index');
     Route::get('student/moduls/{id}', [StudentModulController::class, 'show'])->name('student.moduls.show');
 
+});
+
+Route::middleware([RoleMiddleware::class . ':instructor'])->group(function (){
+    Route::get('/instructor/dashboard', function () {
+        return view('instructor.dashboard');
+    })->name('instructor.dashboard');
+    Route::get('/instructor/kursuses', [InstructorKursusController::class, 'index'])->name('instructor.kursuses.index'); // Menampilkan daftar kursus
+    Route::get('/instructor/kursuses/create', [InstructorKursusController::class, 'create'])->name('instructor.kursuses.create'); // Form tambah kursus
+    Route::post('/instructor/kursuses', [InstructorKursusController::class, 'store'])->name('instructor.kursuses.store'); // Simpan kursus baru
+    Route::get('/instructor/kursuses/{id}', [InstructorKursusController::class, 'show'])->name('instructor.kursuses.show'); // Detail kursus
+    Route::get('/instructor/kursuses/{id}/edit', [InstructorKursusController::class, 'edit'])->name('instructor.kursuses.edit'); // Form edit kursus
+    Route::put('kursuses/{id}', [InstructorKursusController::class, 'update'])->name('instructor.kursuses.update'); // Update kursus
+    Route::delete('kursuses/{id}', [InstructorKursusController::class, 'destroy'])->name('instructor.kursuses.destroy'); // Hapus kursus
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
