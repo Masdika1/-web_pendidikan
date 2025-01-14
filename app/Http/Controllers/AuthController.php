@@ -30,7 +30,7 @@ class AuthController extends Controller
             } elseif ($role === 'student') {
                 return redirect('/student/dashboard')->with('success', 'Login berhasil.');
             } elseif ($role === 'instructor') {
-                return redirect('/');
+                return redirect('/instructor/dashboard')->with('success', 'Login berhasil.');
             }
         }
 
