@@ -1,74 +1,60 @@
 @extends('layouts.main_instructor')
 
 @section('content')
-<div class="max-w-5xl mx-auto mt-10 p-10 bg-white rounded-lg shadow-xl">
-    <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Manajemen Sertifikat</h1>
+<div class="container mx-auto my-12">
 
-    <!-- Notifikasi -->
+    <h1 class="text-5xl font-extrabold text-center mb-8 text-gray-900">Daftar Sertifikat</h1>
+
     @if(session('success'))
-        <div class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-            {{ session('success') }}
+        <div class="alert alert-success bg-green-500 text-white p-4 rounded-lg shadow-md flex items-center space-x-4 my-10" role="alert">
+            <span>{{ session('success') }}</span>
         </div>
     @endif
 
-    <!-- Tombol Tambah Sertifikat -->
-    <div class="mb-6 flex justify-end">
-        <a href="{{ route('instructor.certificates.create') }}"
-           class="px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-            Tambah Sertifikat
-        </a>
+    <div class="flex justify-between items-center mb-6">
+        <p class="text-gray-600 text-base">Total Sertifikat: <span class="font-bold">{{ $certificates->count() }}</span></p>
+        <a href="{{ route('instructor.certificates.create') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Tambah Sertifikat</a>
     </div>
-
-    <!-- Tabel Sertifikat -->
-    <div class="overflow-x-auto">
-        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
-            <thead class="bg-gray-100 text-gray-700">
+    <div class="bg-white shadow-2xl rounded-xl overflow-hidden">
+        <table class="w-full border-collapse">
+            <thead class="bg-gradient-to-r from-gray-800 to-gray-900 text-white">
                 <tr>
-                    <th class="py-3 px-4 text-left">No</th>
-                    <th class="py-3 px-4 text-left">Nama Peserta</th>
-                    <th class="py-3 px-4 text-left">Judul Kursus</th>
-                    <th class="py-3 px-4 text-left">Kode Sertifikat</th>
-                    <th class="py-3 px-4 text-left">Tanggal Terbit</th>
-                    <th class="py-3 px-4 text-center">Aksi</th>
+                    <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-b border-gray-700">ID</th>
+                    <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-b border-gray-700">Enrollment</th>
+                    <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-b border-gray-700">Certificate Code</th>
+                    <th class="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-b border-gray-700">Issue Date</th>
+                    <th class="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider border-b border-gray-700">Aksi</th>
                 </tr>
             </thead>
-            <tbody>
-                @forelse($certificates as $certificate)
-                <tr class="border-t border-gray-200 hover:bg-gray-50">
-                    <td class="py-3 px-4">{{ $loop->iteration }}</td>
-                    <td class="py-3 px-4">{{ $certificate->enrollment->user->name }}</td>
-                    <td class="py-3 px-4">{{ $certificate->enrollment->kursus->title }}</td>
-                    <td class="py-3 px-4">{{ $certificate->certificate_code }}</td>
-                    <td class="py-3 px-4">{{ $certificate->issue_date->format('d M Y') }}</td>
-                    <td class="py-3 px-4 text-center space-x-2">
-                        <a href="{{ route('instructor.certificates.show', $certificate->id) }}"
-                           class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-                            Detail
-                        </a>
-                        <form action="{{ route('instructor.certificates.delete', $certificate->id) }}"
-                              method="POST" class="inline-block"
-                              onsubmit="return confirm('Apakah Anda yakin ingin menghapus sertifikat ini?')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit"
-                                    class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                                Hapus
-                            </button>
-                        </form>
-                    </td>
-                </tr>
+            <tbody class="divide-y divide-gray-200 bg-gray-50">
+                @forelse ($certificates as $certificate)
+                    <tr class="hover:bg-gray-100 transition-all duration-300">
+                        <td class="px-6 py-4 text-sm text-gray-800 font-semibold">{{ $certificate->id }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-800 font-medium">
+                            {{ $certificate->enrollment->user->name }} - {{ $certificate->enrollment->kursus->title }}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-800">{{ $certificate->certificate_code }}</td>
+                        <td class="px-6 py-4 text-sm text-gray-800">{{ $certificate->issue_date }}</td>
+                        <td class="px-6 py-4 text-sm flex justify-center space-x-4">
+                            <a href="{{ route('instructor.certificates.show', $certificate->id) }}" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow-lg hover:shadow-xl hover:bg-green-600 transform hover:scale-105 transition-all">Detail</a>
+                            <form action="{{ route('instructor.certificates.delete', $certificate->id) }}" method="POST" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus sertifikat ini?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow-lg hover:shadow-xl hover:bg-red-600 transform hover:scale-105 transition-all">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
                 @empty
-                <tr>
-                    <td colspan="6" class="py-6 text-center text-gray-500">Tidak ada sertifikat yang tersedia.</td>
-                </tr>
+                    <tr>
+                        <td colspan="5" class="px-6 py-4 text-center text-gray-500">Tidak ada sertifikat yang tersedia.</td>
+                    </tr>
                 @endforelse
             </tbody>
         </table>
     </div>
-
-    {{-- <!-- Pagination -->
-    <div class="mt-8">
-        {{ $certificates->links() }}
-    </div> --}}
+    <div class="mt-8 flex justify-between items-center">
+        <p class="text-sm text-gray-600">Menampilkan {{ $certificates->count() }} sertifikat</p>
+        <a href="#" class="text-blue-500 hover:underline text-sm font-semibold">Lihat semua sertifikat</a>
+    </div>
 </div>
 @endsection

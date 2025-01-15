@@ -354,7 +354,6 @@
               <h6
                 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-gray-900"
               >
-                home
               </h6>
             </div>
             <div class="flex items-center">
