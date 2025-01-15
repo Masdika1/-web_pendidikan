@@ -18,6 +18,7 @@ use App\Http\Controllers\StudentModulController;
 use App\Http\Controllers\StudentCertificateController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\InstructorKursusController;
+use App\Http\Controllers\InstructorCertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,13 @@ Route::middleware([RoleMiddleware::class . ':instructor'])->group(function (){
     Route::get('/instructor/kursuses/{id}/edit', [InstructorKursusController::class, 'edit'])->name('instructor.kursuses.edit'); // Form edit kursus
     Route::put('/instructor/kursuses/{id}/', [InstructorKursusController::class, 'update'])->name('instructor.kursuses.update'); // Update kursus
     Route::delete('kursuses/{id}', [InstructorKursusController::class, 'destroy'])->name('instructor.kursuses.destroy'); // Hapus kursus
+
+    Route::get('/instructor/certificates', [InstructorCertificateController::class, 'index'])->name('instructor.certificates.index');
+    Route::get('/instructor/certificates/create', [InstructorCertificateController::class, 'create'])->name('instructor.certificates.create');
+    Route::post('/instructor/certificates/store', [InstructorCertificateController::class, 'store'])->name('instructor.certificates.store');
+    Route::delete('/instructor/certificates/{id}', [InstructorCertificateController::class, 'delete'])->name('instructor.certificates.delete');
+    Route::get('/instructor/certificates/{id}', [InstructorCertificateController::class, 'show'])
+     ->name('instructor.certificates.show');
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
