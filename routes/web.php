@@ -19,6 +19,7 @@ use App\Http\Controllers\StudentCertificateController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\InstructorKursusController;
 use App\Http\Controllers\InstructorCertificateController;
+use App\Http\Controllers\InstructorReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +99,10 @@ Route::middleware([RoleMiddleware::class . ':instructor'])->group(function (){
     Route::delete('/instructor/certificates/{id}', [InstructorCertificateController::class, 'delete'])->name('instructor.certificates.delete');
     Route::get('/instructor/certificates/{id}', [InstructorCertificateController::class, 'show'])
      ->name('instructor.certificates.show');
+
+     Route::get('/instructor/reviews', [InstructorReviewController::class, 'index'])->name('instructor.reviews.index');
+     Route::get('/instructor/reviews/{id}', [InstructorReviewController::class, 'show'])->name('instructor.reviews.show');
+     Route::delete('/instructor/reviews/{id}', [InstructorReviewController::class, 'destroy'])->name('instructor.reviews.destroy');
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
