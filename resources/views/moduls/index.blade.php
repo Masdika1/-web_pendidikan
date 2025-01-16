@@ -1,7 +1,9 @@
 @extends('layouts.main')
+
 @section('content')
 <div class="container mx-auto mt-8">
-    <a href="" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+    <!-- Tombol untuk menambah modul, dengan mengirimkan ID kursus -->
+    <a href="{{ route('moduls.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
         Tambah Modul
     </a>
 
