@@ -20,6 +20,7 @@ use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\InstructorKursusController;
 use App\Http\Controllers\InstructorCertificateController;
 use App\Http\Controllers\InstructorReviewController;
+use App\Http\Controllers\InstructorUserStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,14 @@ use App\Http\Controllers\InstructorReviewController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('instructor')->name('instructor.')->group(function () {
+    Route::get('/userstudent', [InstructorUserStudentController ::class, 'index'])->name('userstudent.index');
+});
+
+Route::middleware(['auth', 'role:instructor'])->group(function () {
+    Route::resource('userstudent', InstructorUserStudentController::class);
 });
 
 Route::middleware([RoleMiddleware::class . ':admin'])->group(function (){
