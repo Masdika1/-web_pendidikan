@@ -53,7 +53,7 @@
         <div class="m-4">
           <ul class="mb-4 flex flex-col gap-1">
             <li>
-              <a aria-current="page" class="" href="{{route ('instructor.dashboard')}}">
+              <a aria-current="page" class="" href="{{route('instructor.dashboard')}}">
                 <button
                   class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'instructor.dashboard' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
@@ -108,7 +108,7 @@
               </a>
             </li>
             <li>
-              <a class="" href="{{route('student.moduls.index')}}">
+              <a class="" href="{{route('instructor.moduls.index')}}">
                 <button
                   class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.moduls.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"

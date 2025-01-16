@@ -1,25 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\KursusController;
-use App\Http\Controllers\ModulController;
-use App\Http\Controllers\AuthController;
 use App\Http\Middleware\RoleMiddleware;
-use App\Http\Controllers\CertificateController;
-use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ModulController;
+use App\Http\Controllers\KursusController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\StudentPaymentController;
-use App\Http\Controllers\StudentKursusController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\StudentModulController;
-use App\Http\Controllers\StudentCertificateController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\StudentModulController;
+use App\Http\Controllers\StudentKursusController;
+use App\Http\Controllers\StudentPaymentController;
+use App\Http\Controllers\InstructorModulController;
 use App\Http\Controllers\InstructorKursusController;
-use App\Http\Controllers\InstructorCertificateController;
 use App\Http\Controllers\InstructorReviewController;
+use App\Http\Controllers\StudentCertificateController;
+use App\Http\Controllers\InstructorCertificateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,6 +104,8 @@ Route::middleware([RoleMiddleware::class . ':instructor'])->group(function (){
      Route::get('/instructor/reviews', [InstructorReviewController::class, 'index'])->name('instructor.reviews.index');
      Route::get('/instructor/reviews/{id}', [InstructorReviewController::class, 'show'])->name('instructor.reviews.show');
      Route::delete('/instructor/reviews/{id}', [InstructorReviewController::class, 'destroy'])->name('instructor.reviews.destroy');
+
+     Route::resource('/instructor/moduls', InstructorModulController::class, ['as' => 'instructor'])->except(['show']);
 });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');

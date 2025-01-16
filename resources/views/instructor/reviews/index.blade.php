@@ -48,6 +48,7 @@
                            class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-blue-600 transform hover:scale-105 transition duration-200 ease-in-out">
                             Detail
                         </a>
+                        @if (Auth::check() && Auth::user()->role == 'admin')
                         <form action="{{ route('reviews.destroy', $review->id) }}" method="POST" class="inline ml-3">
                             @csrf
                             @method('DELETE')
@@ -57,6 +58,7 @@
                                 Delete
                             </button>
                         </form>
+                        @endif
                     </div>
                 </div>
             </div>

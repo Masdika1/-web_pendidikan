@@ -10,14 +10,14 @@ class Modul extends Model
     use HasFactory;
 
     protected $fillable = [
-        'course_id',
+        'kursus_id',
         'title',
         'description',
         'order_no',
     ];
 
     // Relasi ke Course
-    public function kursuses()
+    public function kursus()
     {
         return $this->belongsTo(Kursus::class);
     }
