@@ -20,6 +20,6 @@ class Lesson extends Model
     // Relasi ke Module
     public function module()
     {
-        return $this->belongsTo(Modul::class);
+        return $this->belongsTo(Modul::class, 'module_id'); // Foreign key is `module_id`
     }
 }

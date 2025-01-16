@@ -25,6 +25,6 @@ class Modul extends Model
     // Relasi ke Lesson
     public function lessons()
     {
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany(Lesson::class, 'module_id');
     }
 }

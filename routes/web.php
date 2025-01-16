@@ -20,6 +20,7 @@ use App\Http\Controllers\InstructorModulController;
 use App\Http\Controllers\InstructorKursusController;
 use App\Http\Controllers\InstructorReviewController;
 use App\Http\Controllers\StudentCertificateController;
+use App\Http\Controllers\StudentKursuskuController;
 use App\Http\Controllers\InstructorCertificateController;
 use App\Http\Controllers\InstructorUserStudentController;
 
@@ -89,6 +90,8 @@ Route::middleware([RoleMiddleware::class . ':student'])->group(function (){
     Route::get('student/moduls', [StudentModulController::class, 'index'])->name('student.moduls.index');
     Route::get('student/moduls/{id}', [StudentModulController::class, 'show'])->name('student.moduls.show');
 
+    Route::get('/student/kursusku', [StudentKursuskuController::class, 'index'])->name('student.kursusku.index');
+    Route::get('/student/kursusku/{id}', [StudentKursuskuController::class, 'show'])->name('student.kursusku.show');
 });
 
 Route::middleware([RoleMiddleware::class . ':instructor'])->group(function (){

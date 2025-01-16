@@ -39,4 +39,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function purchasedCourses()
+    {
+        return $this->belongsToMany(Kursus::class, 'payments', 'user_id', 'kursus_id')
+                    ->where('payment_status', 'completed');
+    }
 }

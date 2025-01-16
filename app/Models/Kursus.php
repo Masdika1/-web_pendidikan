@@ -27,7 +27,7 @@ class Kursus extends Model
     // Relasi ke Module
     public function modules()
     {
-        return $this->hasMany(Modul::class);
+        return $this->hasMany(Modul::class, 'kursus_id'); // Foreign key: kursus_id
     }
 
     // Relasi ke Enrollment
@@ -40,5 +40,10 @@ class Kursus extends Model
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
     }
 }

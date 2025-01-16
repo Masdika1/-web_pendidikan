@@ -1,4 +1,4 @@
-@extends('layouts.main_student')
+@extends('layouts.main')
 
 @section('title', 'Edit Payment')
 

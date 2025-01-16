@@ -1,37 +1,50 @@
 @extends('layouts.main_student')
 
+@section('title', 'Lesson Details')
+
 @section('content')
-<div class="max-w-7xl mx-auto p-6">
-    <h1 class="text-3xl font-bold text-gray-800 mb-8 text-left">
-        Module Details
-    </h1>
+<div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Detail Pelajaran</h2>
 
-    <!-- Card Modul -->
-    <div class="bg-white shadow-2xl rounded-2xl border border-gray-200 max-w-4xl mx-auto overflow-hidden">
-        <!-- Header Card -->
-        <div class="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-6">
-            <h2 class="text-3xl font-bold truncate">
-                {{ $modul->title }}
-            </h2>
+    @if (session('success'))
+        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-md shadow">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="space-y-4">
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800">Judul:</h3>
+            <p class="text-gray-600">{{ $lesson->title }}</p>
         </div>
 
-        <!-- Konten Card -->
-        <div class="p-8">
-            <p class="text-gray-700 mb-6 leading-relaxed">
-                {{ $modul->description }}
-            </p>
-            <div class="mb-6">
-                <strong class="block text-gray-800 text-sm">Order:</strong>
-                <span class="text-gray-900 text-lg font-medium">{{ $modul->order_no }}</span>
-            </div>
-            <a href="{{ route('student.moduls.index') }}"
-               class="inline-flex items-center bg-blue-600 text-white text-sm font-semibold px-5 py-3 rounded-lg shadow hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 transition">
-                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-                Back to List
-            </a>
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800">Konten:</h3>
+            <p class="text-gray-600">{{ $lesson->content }}</p>
         </div>
+
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800">Modul:</h3>
+            <p class="text-gray-600">{{ $lesson->module->title ?? 'N/A' }}</p>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800">Urutan:</h3>
+            <p class="text-gray-600">{{ $lesson->order_no }}</p>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold text-gray-800">Video:</h3>
+            @if ($lesson->video_url)
+                <a href="{{ $lesson->video_url }}" target="_blank" class="text-blue-500 hover:underline">Tonton Video</a>
+            @else
+                <p class="text-gray-600">Tidak ada video.</p>
+            @endif
+        </div>
+    </div>
+
+    <div class="mt-6">
+        <a href="{{ route('student.kursusku.index') }}" class="px-6 py-3 bg-blue-500 text-white rounded-full shadow-lg hover:shadow-xl hover:bg-blue-600 transform hover:scale-105 transition-all">Kembali ke Daftar Pelajaran</a>
     </div>
 </div>
 @endsection
