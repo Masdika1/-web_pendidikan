@@ -6,7 +6,7 @@
     <p class="text-center text-gray-500 text-lg mb-8">Lihat sertifikat yang telah Anda peroleh setelah menyelesaikan kursus.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        @foreach ($certificates as $certificate)
+        @forelse ($certificates as $certificate)
             <div class="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
                 <div class="p-6">
                     <h2 class="text-2xl font-semibold text-gray-800 mb-2">{{ $certificate->enrollment->user->name }}</h2>
@@ -19,7 +19,9 @@
                     </a>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <p class="text-gray-600 col-span-full text-center">Anda belum memiliki sertifikat.</p>
+        @endforelse
     </div>
 </div>
 @endsection
