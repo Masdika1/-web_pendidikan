@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto my-12">
 
-    <h1 class="text-5xl font-extrabold text-center mb-8 text-gray-900">Daftar Pengguna</h1>
+    <h1 class="text-5xl font-extrabold text-center mb-8 text-gray-900">Daftar Murid</h1>
 
     @if(session('success'))
         <div class="alert alert-success bg-green-500 text-white p-4 rounded-lg shadow-md flex items-center space-x-4 my-10" role="alert">
@@ -12,8 +12,8 @@
     @endif
 
     <div class="flex justify-between items-center mb-6">
-        <p class="text-gray-600 text-base">Total Pengguna: <span class="font-bold">{{ $users->count() }}</span></p>
-        <a href="{{ route('userstudent.create') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Tambah Pengguna</a>
+        <p class="text-gray-600 text-base">Total Murid: <span class="font-bold">{{ $users->count() }}</span></p>
+        <a href="{{ route('userstudent.create') }}" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">Tambah Murid</a>
     </div>
     <div class="bg-white shadow-2xl rounded-xl overflow-hidden">
         <table class="w-full border-collapse">
@@ -48,8 +48,8 @@
         </table>
     </div>
     <div class="mt-8 flex justify-between items-center">
-        <p class="text-sm text-gray-600">Menampilkan {{ $users->count() }} pengguna</p>
-        <a href="#" class="text-blue-500 hover:underline text-sm font-semibold">Lihat semua pengguna</a>
+        <p class="text-sm text-gray-600">Menampilkan {{ $users->count() }} murid</p>
+        <a href="#" class="text-blue-500 hover:underline text-sm font-semibold">Lihat semua murid</a>
     </div>
 </div>
 @endsection
