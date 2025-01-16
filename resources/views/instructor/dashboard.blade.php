@@ -40,7 +40,7 @@
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
           >
-
+            0
           </h4>
         </div>
       </div>
@@ -73,6 +73,7 @@
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
           >
+            0
           </h4>
         </div>
       </div>
@@ -103,7 +104,7 @@
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
           >
-
+            0
           </h4>
         </div>
       </div>
@@ -134,7 +135,7 @@
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
           >
-
+            0
           </h4>
         </div>
       </div>
