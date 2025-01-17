@@ -140,19 +140,19 @@
                   class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.kursusku.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                   type="button"
                 >
-                  <svg
+                    <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     aria-hidden="true"
                     class="w-5 h-5 text-inherit"
-                  >
+                >
                     <path
-                      fill-rule="evenodd"
-                      d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
+                    fill-rule="evenodd"
+                    d="M6.75 4.5a.75.75 0 00-.75.75v13.5a.75.75 0 001.5 0v-13.5a.75.75 0 00-.75-.75zm10.5 0a.75.75 0 00-.75.75v13.5a.75.75 0 001.5 0v-13.5a.75.75 0 00-.75-.75zM3 6.75A2.25 2.25 0 015.25 4.5h13.5A2.25 2.25 0 0121 6.75v10.5A2.25 2.25 0 0118.75 19.5H5.25A2.25 2.25 0 013 17.25V6.75zm16.5 0a.75.75 0 00-.75-.75H5.25a.75.75 0 00-.75.75v10.5c0 .414.336.75.75.75h13.5c.414 0 .75-.336.75-.75V6.75z"
+                    clip-rule="evenodd"
+                    />
+                </svg>
                   <p
                     class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                   >
@@ -167,19 +167,19 @@
                     class="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg {{ Route::currentRouteName() == 'student.sertifikat.index' ? 'bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]' : 'text-white hover:bg-white/10 active:bg-white/30' }} w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5 text-inherit"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="w-5 h-5 text-inherit"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2a6.375 6.375 0 016.375 6.375v4.95a6.375 6.375 0 01-3.618 5.827l-.756.35-.021 1.498a.75.75 0 01-.67.745l-3 .375a.75.75 0 01-.83-.645l-.165-1.973a6.381 6.381 0 01-2.295-.798l-.755.35a6.375 6.375 0 01-3.617-5.828v-4.95A6.375 6.375 0 0112 2zm0 1.5a4.875 4.875 0 00-4.875 4.875v4.95a4.875 4.875 0 002.73 4.444l.953-.44a.75.75 0 01.63 0l.953.44a4.875 4.875 0 002.73-4.444v-4.95A4.875 4.875 0 0012 3.5zm-.625 9.25h1.25a.625.625 0 000-1.25h-1.25a.625.625 0 000 1.25z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
                     <p
                       class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                     >
@@ -195,17 +195,17 @@
                     type="button"
                   >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      class="w-5 h-5 text-inherit"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    class="w-5 h-5 text-inherit"
                     >
-                      <path
+                    <path
                         fill-rule="evenodd"
-                        d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                        d="M12 2.25a.75.75 0 01.668.418l2.193 4.438 4.893.711a.75.75 0 01.415 1.279l-3.541 3.45.835 4.87a.75.75 0 01-1.087.79L12 16.9l-4.376 2.3a.75.75 0 01-1.087-.79l.835-4.87-3.541-3.45a.75.75 0 01.415-1.279l4.893-.711 2.193-4.438A.75.75 0 0112 2.25zm0 3.278L10.317 8.92a.75.75 0 01-.564.409l-3.465.504 2.507 2.443a.75.75 0 01.216.664l-.592 3.456 3.104-1.63a.75.75 0 01.698 0l3.104 1.63-.592-3.456a.75.75 0 01.216-.664l2.507-2.443-3.465-.504a.75.75 0 01-.564-.41L12 5.528z"
                         clip-rule="evenodd"
-                      ></path>
+                    />
                     </svg>
                     <p
                       class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"

@@ -31,8 +31,8 @@
             <thead class="bg-gradient-to-r from-gray-500 to-gray-600 text-white">
                 <tr>
                     <th class="text-left px-6 py-4 text-sm font-semibold uppercase tracking-wide">ID</th>
-                    <th class="text-left px-6 py-4 text-sm font-semibold uppercase tracking-wide">Course</th>
-                    <th class="text-left px-6 py-4 text-sm font-semibold uppercase tracking-wide">Amount</th>
+                    <th class="text-left px-6 py-4 text-sm font-semibold uppercase tracking-wide">Kursus</th>
+                    <th class="text-left px-6 py-4 text-sm font-semibold uppercase tracking-wide">Harga</th>
                     <th class="text-center px-6 py-4 text-sm font-semibold uppercase tracking-wide">Status</th>
                 </tr>
             </thead>
