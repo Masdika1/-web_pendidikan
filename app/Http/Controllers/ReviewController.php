@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Review;
 use App\Models\Kursus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ReviewController extends Controller
 {
@@ -45,7 +47,6 @@ class ReviewController extends Controller
     // Edit: Form untuk edit review
     public function edit(Review $review)
     {
-        $review = Review::findOrFail($id);
         if ($review->user_id != Auth::id()) {
             abort(403, 'Unauthorized action.');
         }
@@ -73,7 +74,6 @@ class ReviewController extends Controller
     // Destroy: Hapus review
     public function destroy(Review $review)
     {
-        $review = Review::findOrFail($id);
         if ($review->user_id != Auth::id()) {
             abort(403, 'Unauthorized action.');
         }
