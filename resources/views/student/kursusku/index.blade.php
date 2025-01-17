@@ -19,10 +19,12 @@
             @foreach ($purchasedCourses as $kursus)
                 <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl hover:border-blue-500">
                     <!-- Bagian Gambar -->
-                    <div class="bg-gradient-to-r from-green-500 to-green-300 h-40 w-full flex items-center justify-center">
-                        <span class="text-white text-5xl font-bold">
-                            {{ substr($kursus->title, 0, 1) }}
-                        </span>
+                    <div class="h-56 w-full bg-gray-200 overflow-hidden">
+                        @if($kursus->picture)
+                            <img src="{{ Storage::url($kursus->picture) }}" alt="{{ $kursus->title }}" class="w-full h-full object-cover">
+                        @else
+                            <img src="https://via.placeholder.com/400x250.png?text=No+Image" alt="No Image" class="w-full h-full object-cover">
+                        @endif
                     </div>
                     <!-- Detail Kursus -->
                     <div class="p-6">

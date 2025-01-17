@@ -2,8 +2,11 @@
 
 @section('content')
 <div class="container mx-auto mt-8">
-    <h1 class="text-4xl font-extrabold text-gray-800 text-center">Daftar Sertifikat</h1>
-    <p class="text-center text-gray-500 text-lg mb-8">Lihat sertifikat yang telah Anda peroleh setelah menyelesaikan kursus.</p>
+    <div class="max-w-7xl mx-auto p-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">
+            Kursus Saya
+        </h1>
+    <p class="text-left text-gray-500 text-lg mb-8">Lihat sertifikat yang telah Anda peroleh setelah menyelesaikan kursus.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @forelse ($certificates as $certificate)

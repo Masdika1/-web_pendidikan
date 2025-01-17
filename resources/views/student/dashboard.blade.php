@@ -34,7 +34,7 @@
     <div class="relative bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 flex items-center justify-between">
         <div>
             <p class="text-sm text-gray-600">Kursus Saya</p>
-            <h4 class="text-2xl font-bold text-gray-800 mt-2">5</h4>
+            <h4 class="text-2xl font-bold text-gray-800 mt-2">10</h4>
         </div>
         <div class="bg-gradient-to-r from-purple-500 to-purple-400 text-white p-3 rounded-full shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -45,8 +45,8 @@
 
     <div class="relative bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 flex items-center justify-between">
         <div>
-            <p class="text-sm text-gray-600">Total Pendaftar</p>
-            <h4 class="text-2xl font-bold text-gray-800 mt-2">250</h4>
+            <p class="text-sm text-gray-600">Beli Kursus</p>
+            <h4 class="text-2xl font-bold text-gray-800 mt-2">16</h4>
         </div>
         <div class="bg-gradient-to-r from-green-500 to-green-400 text-white p-3 rounded-full shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -57,8 +57,8 @@
 
     <div class="relative bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 flex items-center justify-between">
         <div>
-            <p class="text-sm text-gray-600">Total Kursus</p>
-            <h4 class="text-2xl font-bold text-gray-800 mt-2">15</h4>
+            <p class="text-sm text-gray-600">Sertifikat</p>
+            <h4 class="text-2xl font-bold text-gray-800 mt-2">1</h4>
         </div>
         <div class="bg-gradient-to-r from-orange-500 to-orange-400 text-white p-3 rounded-full shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

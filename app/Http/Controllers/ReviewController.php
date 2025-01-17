@@ -45,8 +45,11 @@ class ReviewController extends Controller
     // Edit: Form untuk edit review
     public function edit(Review $review)
     {
-        $kursuses = Kursus::all();
-        return view('reviews.edit', compact('review', 'kursuses'));
+        $review = Review::findOrFail($id);
+        if ($review->user_id != Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+        return view('reviews.edit', compact('review'));
     }
 
     // Update: Update data review
@@ -70,6 +73,11 @@ class ReviewController extends Controller
     // Destroy: Hapus review
     public function destroy(Review $review)
     {
+        $review = Review::findOrFail($id);
+        if ($review->user_id != Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $review->delete();
         return redirect()->route('reviews.index')->with('success', 'Review deleted successfully!');
     }

@@ -210,7 +210,7 @@
                     <p
                       class="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize"
                     >
-                      Reviews
+                      Review
                     </p>
                   </button>
                 </a>

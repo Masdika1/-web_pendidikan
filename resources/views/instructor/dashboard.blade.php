@@ -35,7 +35,7 @@
           <p
             class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600"
           >
-            Keuntungan
+            Kursus
           </p>
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
@@ -68,7 +68,7 @@
           <p
             class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600"
           >
-            Total Pengguna
+            Modul
           </p>
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
@@ -130,7 +130,7 @@
           <p
             class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600"
           >
-            Total Kursus
+            Reviews
           </p>
           <h4
             class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900"
