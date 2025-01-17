@@ -20,6 +20,13 @@
         @foreach ($kursuses as $kursus)
         <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
             <!-- Card Body -->
+            <div class="h-56 w-full bg-gray-200 overflow-hidden">
+                @if($kursus->picture)
+                    <img src="{{ Storage::url($kursus->picture) }}" alt="{{ $kursus->title }}" class="w-full h-full object-cover">
+                @else
+                    <img src="https://via.placeholder.com/400x250.png?text=No+Image" alt="No Image" class="w-full h-full object-cover">
+                @endif
+                </div>
             <div class="p-6">
                 <!-- Title -->
                 <h3 class="text-xl font-bold text-blue-600">{{ $kursus->title }}</h3>
@@ -41,6 +48,12 @@
                 <a href="{{ route('kursuses.show', $kursus->id) }}"
                    class="block text-center mt-6 px-4 py-2 bg-blue-500 text-white font-medium rounded-full hover:bg-blue-600 transition-all">
                     Lihat Detail
+                </a>
+
+                <!-- Edit Button -->
+                <a href="{{ route('kursuses.edit', $kursus->id) }}"
+                   class="block text-center mt-4 px-4 py-2 bg-yellow-500 text-white font-medium rounded-full hover:bg-yellow-600 transition-all">
+                    Edit Kursus
                 </a>
             </div>
         </div>
